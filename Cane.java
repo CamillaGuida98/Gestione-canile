@@ -1,4 +1,6 @@
-
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Set;
 
 public class Cane extends Animale {
 
@@ -6,12 +8,13 @@ public class Cane extends Animale {
     int eta;
     String razza;
     String id;
+    private static ArrayList<String> idGenerati = new ArrayList<>();
 
-    public Cane(String nome, int eta, String razza, String id) {
+    public Cane(String nome, int eta, String razza) {
 
         super(nome, eta, "cane");
         this.razza = razza;
-        this.id = id;
+        this.id = generaID();
 
     }
 
@@ -19,14 +22,21 @@ public class Cane extends Animale {
         return razza;
     }
 
-    // public String getId(ArrayList<Cane> lista) {
-       
-    //     for (Cane cane : lista) {
-    //         if (cane.getId().equals(id)) {
-    //         return id;
-    //     } 
-    // }
-    // }
+    private String generaID() {
+        Random random = new Random();
+        int numeroCasuale = random.nextInt(9000) + 1000;
+
+        while(idGenerati.contains(String.valueOf(numeroCasuale))){
+
+            //inserire un try per controllare che la lunghezza lista sia <9999
+            numeroCasuale = random.nextInt(9000) + 1000;
+
+        }
+        
+            idGenerati.add(String.valueOf(numeroCasuale));
+
+        return String.valueOf(numeroCasuale);
+    }
 
     public String getId() {
         return id;
