@@ -6,3 +6,4 @@ A quel punto si ha la possibilità di assegnare i cani tramite uno switch a un u
 Implementazioni: 
 1) inserire login diversificato con controllo tra personale e utente che vuole adottare, in modo da cambiare l'esperienza degli utenti nel portale. 
 2) inserire try e catch per il controllo degli scanner.
+3) modificare il while per il numero id randomico. 
